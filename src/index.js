@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ApolloProvider } from '@apollo/client/react';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import './index.css';
+
+const client = new ApolloClient({
+  uri: 'https://todo-list-timisdev.herokuapp.com/v1/graphql',
+  cache: new InMemoryCache()
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider >
   </React.StrictMode>,
   document.getElementById('root')
 );
