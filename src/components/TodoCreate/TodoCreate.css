@@ -1,0 +1,17 @@
+.todo-create {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.todo-create button {
+  color: black;
+  background-color: burlywood;
+  border: 1px tan solid;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.todo-create input {
+  width: 150px;
+}
