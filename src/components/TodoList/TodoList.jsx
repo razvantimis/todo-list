@@ -1,19 +1,8 @@
 
 import { TodoItem } from '../TodoItem';
-import { useQuery, gql } from '@apollo/client';
 import './TodoList.css'
 
-const TodoListQuery = gql`
-  query TodoListQuery {
-    todo_list {
-      id
-      name
-    }
-}
-`;
-
-export const TodoList = () => {
-  const { loading, error, data } = useQuery(TodoListQuery);
+export const TodoList = ({ loading, error, data }) => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
